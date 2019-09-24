@@ -1,0 +1,20 @@
+c:\users\mike\documents\visual studio 2015\Projects\GeneradorQr\GeneradorQr\bin\Debug\GeneradorQr.exe.config
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\bin\Debug\GeneradorQr.exe
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\bin\Debug\GeneradorQr.pdb
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\bin\Debug\Gma.QrCodeNet.Encoding.dll
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\bin\Debug\Gma.QrCodeNet.Encoding.pdb
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\bin\Debug\Gma.QrCodeNet.Encoding.xml
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\obj\Debug\GeneradorQr.csprojResolveAssemblyReference.cache
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\obj\Debug\GeneradorQr.exe
+c:\Users\mike\Documents\Visual Studio 2015\Projects\GeneradorQr\GeneradorQr\obj\Debug\GeneradorQr.pdb
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\GeneradorQr.exe.config
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\obj\Debug\GeneradorQr.exe
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\obj\Debug\GeneradorQr.pdb
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\GeneradorQr.exe
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\GeneradorQr.pdb
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\Gma.QrCodeNet.Encoding.dll
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\itextsharp.dll
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\Gma.QrCodeNet.Encoding.pdb
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\Gma.QrCodeNet.Encoding.xml
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\bin\Debug\itextsharp.xml
+C:\Users\mike\Documents\SIRGA\GeneradorQr\GeneradorQr\obj\Debug\GeneradorQr.csprojResolveAssemblyReference.cache
