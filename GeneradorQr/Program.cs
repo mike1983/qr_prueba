@@ -37,7 +37,7 @@ namespace GeneradorQr
                 doc.Open();
                 iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(@path + "\\codigo.jpeg");
                 iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-                img.SetAbsolutePosition(10, 500);
+                img.SetAbsolutePosition(500, 700);
                 img.ScaleToFit(50f, 50F);
                 doc.Add(img);
                 doc.Close();
@@ -52,7 +52,7 @@ namespace GeneradorQr
         {
             //base.OnEndPage(writer, document);
             BaseFont bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
-            iTextSharp.text .Font times = new iTextSharp.text.Font(bfTimes, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+            iTextSharp.text .Font times = new iTextSharp.text.Font(bfTimes, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
             PdfPTable tbHeader = new PdfPTable(3);
             tbHeader.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
             tbHeader.DefaultCell.Border = 0;
@@ -64,17 +64,51 @@ namespace GeneradorQr
            // tbHeader.AddCell(new Paragraph());
             PdfPCell _cell = new PdfPCell(new Paragraph("INSTITUTO PARA EL REGISTRO DEL TERRITORIO"));
             _cell.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
-            //_cell.Border = 0;
+            _cell.Border = 0;
             tbHeader.AddCell(_cell);
             _cell = new PdfPCell(new Paragraph("DIRECCIÓN DEL REGISTRO PÚBLICO DE LA PROPIEDAD Y DEL COMERCIO", times));
             _cell.HorizontalAlignment = Element.ALIGN_RIGHT;
             _cell.Border = 0;
             tbHeader.AddCell(_cell);
-            tbHeader.AddCell(new Paragraph());
+   //         _cell = new PdfPCell(new Paragraph("CERTIFICADO DE EXISTENCIA O INEXISTENCIA DE GRAVAMENES ANTECEDENTES REGISTRALES", times));
+            //tbHeader.AddCell(new Paragraph());
             tbHeader.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin)+40, writer.DirectContent);
 
+            //segundo encabezado
+          
+            iTextSharp.text.Font times2 = new iTextSharp.text.Font(bfTimes, 9, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+            //var MyFontBold = FontFactory.GetFont(FontFactory.TIMES_BOLD, 8);
+            var FontColour = new iTextSharp.text.BaseColor(255, 0, 0);
+            var MyFontBold = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.BOLD);
+            PdfPTable tbHeader2 = new PdfPTable(1);
+            tbHeader2.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+            tbHeader2.DefaultCell.Border = 1;
+            _cell = new PdfPCell(new Paragraph("___________________________________________________________________________________________________________________", times));
+            _cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            _cell.Border = 0;
+            tbHeader2.AddCell(_cell);
+            tbHeader2.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin)-34, writer.DirectContent);
+            PdfPTable tbHeader3 = new PdfPTable(1);
+            tbHeader3.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+            tbHeader3.DefaultCell.Border = 0;
+            _cell = new PdfPCell(new Paragraph("Dirección General del Registro Público de la Propiedad y el Comercio", times2));
+            _cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            _cell.Border = 0;
+            tbHeader3.AddCell(_cell);
+            tbHeader3.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin) - 44, writer.DirectContent);
+            //cuarto encabezado
+            PdfPTable tbHeader4 = new PdfPTable(3);
+            tbHeader4.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+            tbHeader4.DefaultCell.Border = 0;
+            tbHeader4.AddCell(new Paragraph());
+            _cell = new PdfPCell(new Paragraph("CERTIFICADO DE EXISTENCIA O INEXISTENCIA DE GRAVAMENES ANTECEDENTES REGISTRALES", MyFontBold));
+            _cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            _cell.Border = 0;
+            tbHeader4.AddCell(_cell);
+            tbHeader4.AddCell(new Paragraph());
+            tbHeader4.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin) - 54, writer.DirectContent);
 
-
+            // pie de pagina
             PdfPTable tbFooter = new PdfPTable(3);
             tbFooter.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
             tbFooter.DefaultCell.Border = 0;
