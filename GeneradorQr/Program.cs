@@ -80,6 +80,7 @@ namespace GeneradorQr
             //var MyFontBold = FontFactory.GetFont(FontFactory.TIMES_BOLD, 8);
             var FontColour = new iTextSharp.text.BaseColor(255, 0, 0);
             var MyFontBold = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.BOLD);
+            var MyArialFont = FontFactory.GetFont("Arial", 8);
             PdfPTable tbHeader2 = new PdfPTable(1);
             tbHeader2.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
             tbHeader2.DefaultCell.Border = 1;
@@ -97,17 +98,35 @@ namespace GeneradorQr
             tbHeader3.AddCell(_cell);
             tbHeader3.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin) - 44, writer.DirectContent);
             //cuarto encabezado
-            PdfPTable tbHeader4 = new PdfPTable(3);
+            PdfPTable tbHeader4 = new PdfPTable(1);
             tbHeader4.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
             tbHeader4.DefaultCell.Border = 0;
             tbHeader4.AddCell(new Paragraph());
-            _cell = new PdfPCell(new Paragraph("CERTIFICADO DE EXISTENCIA O INEXISTENCIA DE GRAVAMENES ANTECEDENTES REGISTRALES", MyFontBold));
-            _cell.HorizontalAlignment = Element.ALIGN_CENTER;
-            _cell.Border = 0;
-            tbHeader4.AddCell(_cell);
+             _cell = new PdfPCell(new Paragraph("CERTIFICADO DE EXISTENCIA O INEXISTENCIA DE GRAVAMENES \n ANTECEDENTES REGISTRALES", MyFontBold));
+             _cell.HorizontalAlignment = Element.ALIGN_CENTER;
+             _cell.Border = 0;
+             tbHeader4.AddCell(_cell);          
             tbHeader4.AddCell(new Paragraph());
             tbHeader4.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin) - 54, writer.DirectContent);
-
+            //quinto encabezado
+            PdfPTable tbHeader5 = new PdfPTable(1);
+            tbHeader5.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+            tbHeader5.DefaultCell.Border = 0;
+            tbHeader5.AddCell(new Paragraph());
+            Chunk T1 = new Chunk("PRELACIÓN:", MyFontBold);
+            Chunk T2 = new Chunk("valor", MyArialFont);
+            Chunk T3 = new Chunk("           FOLIO DE VALIDACÓN:", MyFontBold);
+            Chunk T4 = new Chunk("valor", MyArialFont);
+            Phrase p5 = new Phrase();
+            p5.Add(T1);
+            p5.Add(T2);
+            p5.Add(T3);
+            p5.Add(T4);
+            Paragraph p = new Paragraph();
+            p.Add(p5);
+            tbHeader5.AddCell(p);
+            tbHeader5.AddCell(new Paragraph());
+            tbHeader5.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin) - 74, writer.DirectContent);
             // pie de pagina
             PdfPTable tbFooter = new PdfPTable(3);
             tbFooter.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
@@ -118,7 +137,7 @@ namespace GeneradorQr
             _cell.Border = 0;
             tbFooter.AddCell(_cell);
 
-            _cell = new PdfPCell(new Paragraph("Hoja " + writer.PageNumber));
+            _cell = new PdfPCell(new Paragraph("Pagina  " + writer.PageNumber));
             _cell.HorizontalAlignment = Element.ALIGN_RIGHT;
             _cell.Border = 0;
             tbFooter.AddCell(_cell);
